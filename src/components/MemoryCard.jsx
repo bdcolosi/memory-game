@@ -2,10 +2,13 @@ import React, {Component} from 'react';
 
 import "./MemoryCard.css";
 
-class MemoryCardBack extends Component {
+class MemoryCard extends Component {
+    clickHandler = () => {
+        alert("card clicked")
+    }
     render() {
         return (
-            <div className="MemoryCard">
+            <div className="MemoryCard" onClick = {this.clickHandler}>
             <div className="MemoryCardInner">
             <div className="MemoryCardBack">
                 <img class="image" src="https://www.digitalcrafts.com/img/digitalcrafts-logo-white-y.png"/>
@@ -19,4 +22,4 @@ class MemoryCardBack extends Component {
     }
 }
 
-export default MemoryCardBack;
+export default MemoryCard;
