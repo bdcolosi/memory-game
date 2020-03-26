@@ -4,14 +4,33 @@ import MemoryCard from "./components/MemoryCard"
 import './App.css';
 
 function generateDeck(){
-const symbols = {`∆`,` ß`, `£`, `§`,`•`, `$`, `+`, `ø`}
+const symbols = [`∆`,` ß`, `£`, `§`,`•`, `$`, `+`, `ø`]
+let deck = []
+for(i=0; i< 16; i++) {
+ deck.push({
+   isFlipped:false,
+   symbols: symbols[i%8]
+ })
+ shuffle(deck)
+}
+return deck 
+}
+function shuffle(a) {
+  var j, x, i;
+  for (i = a.length - 1; i > 0; i--) {
+      j = Math.floor(Math.random() * (i + 1));
+      x = a[i];
+      a[i] = a[j];
+      a[j] = x;
+  }
+  return a;
 }
 
 
 class GameLogic extends Component {
 constructor() {
   super()
-  deck: ""
+  this.state = deck.generateDeck()
   pickedcards: ""
 }
 }
