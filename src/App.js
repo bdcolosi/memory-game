@@ -1,7 +1,20 @@
-import React from 'react';
+import React, {Component} from 'react';
 import MemoryCard from "./components/MemoryCard"
 
 import './App.css';
+
+function generateDeck(){
+const symbols = {`∆`,` ß`, `£`, `§`,`•`, `$`, `+`, `ø`}
+}
+
+
+class GameLogic extends Component {
+constructor() {
+  super()
+  deck: ""
+  pickedcards: ""
+}
+}
 
 function App() {
   return (
@@ -37,5 +50,6 @@ function App() {
     </div>
   );
 }
+
 
 export default App;
