@@ -6,13 +6,13 @@ import './App.css';
 function generateDeck(){
 const symbols = [`∆`,` ß`, `£`, `§`,`•`, `$`, `+`, `ø`]
 let deck = []
-for(let i=0; i< 16; i++) {
+for(let i=0; i<16; i++) {
  deck.push({
    isFlipped:false,
-   symbols: symbols[i%8]
- })
+   symbol: symbols[i%8]
+ })}
  shuffle(deck)
-}
+ console.log("deck", deck)
 return deck 
 }
 function shuffle(a) {
@@ -35,8 +35,10 @@ class App extends Component {
   }
   }
   render(){
-    const cardsJSX = this.state.deck.map((card,index) => {
-      return <MemoryCard/>
+    let cardsJSX = this.state.deck.map((card,index) => {
+      return (<MemoryCard symbol={card.symbol} isFlipped = {card.isFlipped}/>)
+        
+        
     })
   return (
     <div className="App">
@@ -45,16 +47,16 @@ class App extends Component {
         <div className="Subtitle">Match cards to win</div>
       </header>
      <div>
-      {cardsJSX(0,4)}
+      {cardsJSX.slice(0,4)}
       </div>
       <div>
-      {cardsJSX(4,8)}
+      {cardsJSX.slice(4,8)}
       </div>
       <div>
-     {cardJSX(8,12)}
+     {cardsJSX.slice(8,12)}
       </div>
       <div>
-      {cardJSX(12,16)}
+      {cardsJSX.slice(12,16)}
       </div>
     </div>
   )
