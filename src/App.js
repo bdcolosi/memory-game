@@ -6,7 +6,7 @@ import './App.css';
 function generateDeck(){
 const symbols = [`∆`,` ß`, `£`, `§`,`•`, `$`, `+`, `ø`]
 let deck = []
-for(i=0; i< 16; i++) {
+for(let i=0; i< 16; i++) {
  deck.push({
    isFlipped:false,
    symbols: symbols[i%8]
@@ -31,10 +31,11 @@ class App extends Component {
     super()
     this.state = {
       deck:generateDeck(),
-      pickedcards: []  
+      pickedcards:[]  
   }
   }
   render(){
+    const cardsJSX = this.state.deck.map
   return (
     <div className="App">
       <header className="App-header">
