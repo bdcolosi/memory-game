@@ -34,6 +34,7 @@ class App extends Component {
       pickedcards: []  
   }
   }
+  render(){
   return (
     <div className="App">
       <header className="App-header">
@@ -65,7 +66,8 @@ class App extends Component {
       <MemoryCard/>
       </div>
     </div>
-  );
+  )
+}
 }
 
 
