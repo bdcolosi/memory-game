@@ -8,9 +8,9 @@ class MemoryCard extends Component {
         this.state = {isFlipped:false};
     }
     clickHandler = () => {
-        alert(this.setState({
+        this.setState({
             isFlipped: !this.state.isFlipped
-        }))
+        })
     }
     
     render() {
