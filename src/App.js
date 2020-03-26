@@ -26,16 +26,14 @@ function shuffle(a) {
   return a;
 }
 
-
-class GameLogic extends Component {
-constructor() {
-  super()
-  this.state = deck.generateDeck()
-  pickedcards: ""
-}
-}
-
-function App() {
+class App extends Component {
+  constructor() {
+    super()
+    this.state = {
+      deck:generateDeck(),
+      pickedcards: []  
+  }
+  }
   return (
     <div className="App">
       <header className="App-header">
