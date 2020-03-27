@@ -33,10 +33,16 @@ class App extends Component {
       deck:generateDeck(),
       pickedcards:[]  
   }
+  pickCard((cardIndex) => {
+    if(this.state.deck[cardIndex] === true ) {
+      return;
+    }
+  })
   }
+  
   render(){
     let cardsJSX = this.state.deck.map((card,index) => {
-      return (<MemoryCard symbol={card.symbol} isFlipped = {card.isFlipped}/>)
+      return (<MemoryCard symbol={card.symbol} isFlipped = {card.isFlipped} key = {index}/>)
         
         
     })
